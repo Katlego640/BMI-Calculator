@@ -6,6 +6,7 @@ export default function BmiCalculator() {
   const [weight, setWeight] = useState('');
   const [bmi, setBmi] = useState<number | null>(null);
   const [category, setCategory] = useState('');
+  const [age, setAge] = useState('')
 
   const calculateBMI = () => {
     const h = parseFloat(height) / 100; // convert cm to meters
@@ -32,6 +33,14 @@ export default function BmiCalculator() {
         keyboardType="numeric"
         value={height}
         onChangeText={setHeight}
+      />
+
+      <TextInput
+      style={styles.input}
+      placeholder= "Age"
+      keyboardType= "numeric"
+      value={age}
+      onChangeText={setAge}
       />
 
       <TextInput
